@@ -157,6 +157,11 @@ Each of these came up during the session. They are listed in the order they were
 - **Cause:** PGlite creates only the last path segment, so the `.data` parent folder didn't exist yet.
 - **Fix:** `fs.mkdirSync(dir, { recursive: true })` before opening the database.
 
+
+
+
+
+
 ### 5.2 Shell quoting broke a multi-file write
 - **Symptom:** a batch of file writes via bash heredocs failed with `unexpected EOF while looking for matching '`, and no files were written.
 - **Fix:** switched to writing files directly, which removed shell parsing from the loop.
